@@ -19,14 +19,14 @@ func main() {
 	// Створити папку в своєму репозиторії в github та завантажити туди main.go файл, в котрому буде зроблено дане завдання.
 
 	applePrice := 5.99
-	peakPrice := 7
-	myMoney := 23
+	peakPrice := 7.00
+	myMoney := 23.00
 
 	// 1. Скільки грошей треба витратити, щоб купити 9 яблук та 8 груш?
 	fmt.Println("1. Скільки грошей треба витратити, щоб купити 9 яблук та 8 груш?")
 	amountApples := 9
 	amountPeaks := 8
-	moneyForAppleAndPeaks := float64(amountApples)*applePrice + float64(amountPeaks*peakPrice)
+	moneyForAppleAndPeaks := float64(amountApples)*applePrice + float64(amountPeaks)*peakPrice
 	fmt.Println("Нам потрібно", moneyForAppleAndPeaks, "грн")
 
 	// 2. Скільки груш ми можемо купити?
@@ -43,11 +43,15 @@ func main() {
 	fmt.Println("4.Чи ми можемо купити 2 груші та 2 яблука?")
 	amountApples = 2
 	amountPeaks = 2
-	shopList := applePrice*float64(amountApples)+float64(peakPrice*amountPeaks) <= float64(myMoney)
-	if shopList == true {
+
+	price2Apples := applePrice * float64(amountApples)
+	price2Peaks := peakPrice * float64(amountPeaks)
+	shopList := price2Apples + price2Peaks
+
+	if shopList <= myMoney == true {
 		fmt.Println("Так, зможемо купити")
 	} else {
 		fmt.Println("Ні, не можемо купити")
 	}
-}
 
+}
